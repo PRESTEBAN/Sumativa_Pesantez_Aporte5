@@ -1,0 +1,102 @@
+$size : 50vmin;
+$duration : 5s;
+
+body {
+	animation: sky $duration linear infinite;
+	background: skyblue;
+}
+
+.sky {
+	position: relative;
+	width: $size;
+	height: $size;
+	transform: translate(calc(50vw - #{$size/2}), calc(50vh - #{$size/2}));
+}
+
+.sky#night {
+	background: black; /* Cambiar el fondo a negro cuando la luna está activa */
+  }
+  
+  .moon-active ~ .sky#night {
+	background: black; /* Asegura que el fondo se mantenga negro cuando la luna está activa */
+  }
+  
+  .night-background {
+	background: black !important; /* Cambiar el fondo a negro cuando la luna está activa */
+  }
+
+.sun, .moon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(red, .5);
+	border-radius: 50%;
+}
+
+.sun {
+	background: gold;
+	animation: sun $duration linear infinite;
+	
+	@keyframes sun {
+		50% {
+			background: white;
+			box-shadow: 
+				0 0 5em white,
+				0 0 5em white,
+				0 0 5em white,
+				0 0 5em white;
+		}
+	}
+}
+
+.moon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 50%;
+}
+
+.sky#night {
+	background: black; /* Cambiar el fondo a negro cuando la luna está activa */
+}
+
+.moon-active ~ .sky#night, .moon-active ~ body {
+	background: black; /* Asegura que el fondo se mantenga negro cuando la luna está activa */
+}
+  
+.moon-active {
+	background: rgba(255, 255, 255, 0.5); /* Color de la luna */
+	animation: moon $duration linear forwards; /* Animación de la luna con fill-mode forwards */
+}
+
+@keyframes moon {
+	0% {
+	  transform: translateX(100%);
+	}
+	49.9% {
+	  transform: translateX(0%); /* Detener la luna justo antes de llegar encima del sol */
+	}
+	50% {
+	  transform: translateX(0%);
+	  z-index: 3; /* Asegura que la luna esté por encima del sol */
+	}
+	100% {
+	  transform: translateX(0%); /* Mantener la luna en su posición encima del sol */
+	}
+}  
+
+.night-background {
+	background: black !important; /* Cambiar el fondo a negro cuando la luna está activa */
+  }
+
+.TextLight{
+  justify-content: center;
+  display: flex;
+  margin-top: 355px;
+  font-size: 24px;
+  font-weight: bold;
+}

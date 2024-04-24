@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Control luz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   <body >
+    <div class="sky">
+      <div class="sun"></div>
+      <div class="moon" [ngClass]="{'moon-active': !isDaytime}"></div>
+    </div>
+     <p class="TextLight"> Cantidad de luz: {{nivelLight}}</p>
+   </body>
+</ion-content>

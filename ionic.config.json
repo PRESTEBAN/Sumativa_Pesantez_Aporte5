@@ -1,0 +1,7 @@
+{
+  "name": "LuzControl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

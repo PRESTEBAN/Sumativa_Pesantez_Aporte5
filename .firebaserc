@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "controlluz-1e524": {
+      "hosting": {
+        "app": [
+          "controlluz-1e524"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "controlluz-1e524"
+  }
+}
